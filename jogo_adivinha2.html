@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo adivinha</title>
+</head>
+<body>
+
+    <input type="text">
+    <button>Compare com o meu segredo!</button>]
+
+    <script>
+        var segredos = [3, 5, 7, 10];
+        var input = document.querySelector("input");
+        input.focus();
+
+        function verifica(){
+            var achou = false;
+            for(var posicao = 0; posicao < segredos.length; posicao++){ //lenght tamanha do array
+                if(input.value == segredos[posicao]){
+                
+                alert("Você Acertou!");
+                achou = true;
+                break;
+                }   
+            }
+            if(achou == false){
+                alert("Você Errou!");
+            }
+
+            input.value = "";
+            input.focus();
+        }
+        var button = document.querySelector("button");
+        button.onclick = verifica;
+        input.focus();
+
+    </script>
+    
+</body>
+</html>
